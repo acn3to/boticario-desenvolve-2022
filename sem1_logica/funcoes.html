@@ -4,14 +4,22 @@
   function pulaLinha() {
     document.write("<br><br>");
   }
-  
+
+  function mostra(parametro) {
+    document.write(parametro);
+  }
+
   var ano = 2021;
 
-  document.write("Flávio tem " + (ano - 1977) + " anos");
+  mostra("Flávio tem " + (ano - 1977) + " anos");
+
   pulaLinha();
-  document.write("Joaquim tem " + (ano - 1966) + " anos");
+
+  mostra("Joaquim tem " + (ano - 1966) + " anos");
+
   pulaLinha();
+
   ano = 1980;
 
-  document.write("Barney tem " + (ano - 1976) + " anos");
+  mostra("Barney tem " + (ano - 1976) + " anos");
 </script>
