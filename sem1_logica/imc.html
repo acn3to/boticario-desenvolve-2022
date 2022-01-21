@@ -9,27 +9,22 @@
     pulaLinha();
   }
 
-  function calculaImc(peso1, altura1, nome1, peso2, altura2, nome2) {
-    let imc1 = peso1 / (altura1 * altura2);
-    let imc2 = peso2 / (altura2 * altura2);
-    let imcTotal = imc1 + imc2;
-    mostra(
-      "A soma dos IMCs de " +
-        nome1 +
-        " e " +
-        nome2 +
-        " é " +
-        Math.round(imcTotal)
-    );
+  function calculaImc(peso, altura, nome) {
+    let imc = peso / (altura * altura);
+    return "O IMC de " + nome + " é de " + Math.round(imc);
   }
 
+  let nome1 = "Arnaldo";
   let peso1 = 85;
   let altura1 = 1.81;
-  let nome1 = "Arnaldo";
 
+  let nome2 = "Paula";
   let peso2 = 66;
   let altura2 = 1.5;
-  let nome2 = "Paula";
 
-  calculaImc(peso1, altura1, nome1, peso2, altura2, nome2);
+  let imcArnaldo = calculaImc(peso1, altura1, nome1);
+  let imcPaula = calculaImc(peso2, altura2, nome2);
+
+  mostra(imcArnaldo);
+  mostra(imcPaula);
 </script>
