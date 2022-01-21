@@ -1,0 +1,17 @@
+<meta charset="UTF-8" />
+<script>
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+
+  let quantidadeDeGeracoes = (2021 - 1500) / 28;
+
+  mostra(
+    "Desde 1500, passaram-se " + Math.round(quantidadeDeGeracoes) + " gerações"
+  );
+</script>
