@@ -9,9 +9,18 @@
     pulaLinha();
   }
 
-  function calculaImc(peso, altura, nome) {
-    let imc = peso / (altura * altura);
-    mostra("O IMC de " + nome + " é " + Math.round(imc));
+  function calculaImc(peso1, altura1, nome1, peso2, altura2, nome2) {
+    let imc1 = peso1 / (altura1 * altura2);
+    let imc2 = peso2 / (altura2 * altura2);
+    let imcTotal = imc1 + imc2;
+    mostra(
+      "A soma dos IMCs de " +
+        nome1 +
+        " e " +
+        nome2 +
+        " é " +
+        Math.round(imcTotal)
+    );
   }
 
   let peso1 = 85;
@@ -22,6 +31,5 @@
   let altura2 = 1.5;
   let nome2 = "Paula";
 
-  calculaImc(peso1, altura1, nome1);
-  calculaImc(peso2, altura2, nome2);
+  calculaImc(peso1, altura1, nome1, peso2, altura2, nome2);
 </script>
