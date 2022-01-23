@@ -1,0 +1,30 @@
+<meta charset="UTF-8" />
+
+<script>
+  let loginCadastrado = "gbtech";
+  let senhaCadastrada = "gb1234";
+
+  let maximoTentativas = 3;
+  let tentativaAtual = 1;
+
+  while (tentativaAtual <= maximoTentativas) {
+    let loginInformado = prompt("Informe seu login");
+    let senhaInformada = prompt("Informe sua senha");
+
+    if (
+      loginCadastrado == loginInformado &&
+      senhaCadastrada == senhaInformada
+    ) {
+      alert("Bem-vindo ao sistema, " + loginInformado);
+
+      tentativaAtual = maximoTentativas;
+    } else {
+      if (tentativaAtual == 3) {
+        alert("Número permitido de tentativas ultrapassado!");
+      } else {
+        alert("Login inválido. Tente novamente");
+      }
+    }
+    tentativaAtual++;
+  }
+</script>
