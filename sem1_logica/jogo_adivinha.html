@@ -9,12 +9,17 @@
     pulaLinha();
   }
 
-  let numeroPensado = Math.round(Math.random() * 10);
-  var chute = parseInt(prompt("Digite o seu chute!"));
+  function sorteia(n) {
+    return Math.round(Math.random() * n);
+  }
+
+  let numeroPensado = sorteia(10);
+
+  let chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
 
   if (chute == numeroPensado) {
-    document.write("Você acertou!");
+    mostra("Você acertou, eu pensei no " + numeroPensado);
   } else {
-    document.write("Você errou! O número pensado foi " + numeroPensado);
+    mostra("Você errou! Eu tinha pensado no " + numeroPensado);
   }
 </script>
