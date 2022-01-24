@@ -15,11 +15,19 @@
 
   let numeroPensado = sorteia(10);
 
-  let chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+  let tentativas = 1;
 
-  if (chute == numeroPensado) {
-    mostra("Você acertou, eu pensei no " + numeroPensado);
-  } else {
-    mostra("Você errou! Eu tinha pensado no " + numeroPensado);
+  while (tentativas <= 3) {
+    let chute = parseInt(prompt("Digite seu chute."));
+
+    if (chute == numeroPensado) {
+      mostra("Você acertou, eu pensei no " + numeroPensado);
+      break;
+    } else {
+      mostra("Você errou!");
+    }
+    tentativas++;
   }
+
+  mostra("Fim");
 </script>
