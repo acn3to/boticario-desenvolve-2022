@@ -1,0 +1,79 @@
+<canvas width="300" height="200" id="brasil"></canvas>
+<canvas width="300" height="200" id="suica"></canvas>
+<canvas width="300" height="200" id="servia"></canvas>
+<canvas width="300" height="200" id="costa-rica"></canvas>
+
+<script>
+  var tela = document.querySelector("#brasil");
+  var pincel = tela.getContext("2d");
+
+  // Brasil
+  pincel.fillStyle = "green";
+  pincel.fillRect(0, 0, 300, 200);
+
+  pincel.fillStyle = "yellow";
+  pincel.beginPath();
+  pincel.moveTo(150, 25);
+  pincel.lineTo(25, 100);
+  pincel.lineTo(275, 100);
+  pincel.fill();
+
+  pincel.beginPath();
+  pincel.moveTo(150, 175);
+  pincel.lineTo(25, 100);
+  pincel.lineTo(275, 100);
+  pincel.fill();
+
+  pincel.fillStyle = "darkblue";
+  pincel.beginPath();
+
+  pincel.arc(150, 100, 50, 0, 2 * 3.14);
+  pincel.fill();
+
+  // Suiça
+  tela = document.querySelector("#suica");
+  pincel = tela.getContext("2d");
+
+  pincel.fillStyle = "red";
+  pincel.fillRect(0, 0, 300, 200);
+
+  pincel.fillStyle = "white";
+  pincel.fillRect(130, 40, 40, 120);
+  pincel.fillRect(90, 80, 120, 40);
+
+  pincel.strokeStyle = "black";
+  pincel.strokeRect(0, 0, 300, 200);
+
+  // Servia
+  tela = document.querySelector("#servia");
+  pincel = tela.getContext("2d");
+
+  pincel.fillStyle = "rgb(191,74,88)";
+  pincel.fillRect(0, 0, 300, 200);
+
+  pincel.fillStyle = "rgb(63,89,168)";
+  pincel.fillRect(0, 66.6, 300, 66.6);
+
+  pincel.fillStyle = "white";
+  pincel.fillRect(0, 133.2, 300, 66.6);
+
+  pincel.strokeStyle = "black";
+  pincel.strokeRect(0, 0, 300, 200);
+
+  // Costa Rica
+  tela = document.querySelector("#costa-rica");
+  pincel = tela.getContext("2d");
+
+  pincel.fillStyle = "#002b7f";
+  pincel.fillRect(0, 0, 300, 200);
+
+  pincel.fillStyle = "white";
+  pincel.fillRect(0, 35, 300, 35);
+  pincel.fillRect(0, 135, 300, 35);
+
+  pincel.fillStyle = "#ce1126";
+  pincel.fillRect(0, 70, 300, 65);
+
+  pincel.strokeStyle = "black";
+  pincel.strokeRect(0, 0, 300, 200);
+</script>
