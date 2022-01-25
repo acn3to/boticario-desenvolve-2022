@@ -1,0 +1,40 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+  function desenhaRetangulo(x, y, largura, altura, cor) {
+    let tela = document.querySelector("canvas");
+    let pincel = tela.getContext("2d");
+
+    pincel.fillStyle = cor;
+    pincel.fillRect(x, y, largura, altura);
+    pincel.strokeStyle = "black";
+    pincel.strokeRect(x, y, largura, altura);
+  }
+
+  function desenhaTexto(x, y, texto) {
+    let tela = document.querySelector("canvas");
+    let pincel = tela.getContext("2d");
+
+    pincel.font = "15px Georgia";
+    pincel.fillStyle = "black";
+    pincel.fillText(texto, x, y);
+  }
+
+  function desenhaBarra(x, y, serie, cores, texto) {
+    desenhaTexto(x, y - 10, texto);
+
+    let somaAltura = 0;
+    for (let i = 0; i < serie.length; i++) {
+      let altura = serie[i];
+      desenhaRetangulo(x, y + somaAltura, 50, altura, cores[i]);
+      somaAltura = somaAltura + altura;
+    }
+  }
+
+  let cores = ["blue", "green", "yellow", "red"];
+  let serie2021 = [50, 25, 20, 5];
+  let serie2022 = [65, 20, 13, 2];
+
+  desenhaBarra(50, 50, serie2021, cores, "2021");
+  desenhaBarra(150, 50, serie2022, cores, "2022");
+</script>
