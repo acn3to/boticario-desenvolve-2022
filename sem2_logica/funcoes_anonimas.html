@@ -1,19 +1,23 @@
-<canvas width="600" height="400"></canvas>
+Escolha uma cor <input type="color" /> <!--Input do tipo color, que ao ser clicado exibe uma paleta de cores para podermos selecionar-->
+<br />
+<br />
+<canvas width="600" height="400"></canvas> <!-- Adiciona um Canvas à pagina HTML -->
 
 <script>
-  let tela = document.querySelector("canvas");
+  let paleta = document.querySelector("input"); // Guarda o valor do input em uma variável
+  let tela = document.querySelector("canvas"); 
   let pincel = tela.getContext("2d");
 
-  pincel.fillStyle = "grey";
-  pincel.fillRect(0, 0, 600, 400);
+  pincel.fillStyle = "grey"; // Aplica uma cor ao pincel
+  pincel.fillRect(0, 0, 600, 400); // Desenha um retangulo com os parametros informados entre os parenteses 
 
-  let desenha = false;
+  let desenha = false; // Inicia uma variável que hora precisará ser TRUE, hora FALSE
 
   tela.onmousemove = function (evento) {
     if (desenha) {
-      let x = evento.pageX - tela.offsetLeft;
+      let x = evento.pageX - tela.offsetLeft; 
       let y = evento.pageY - tela.offsetTop;
-      pincel.fillStyle = "blue";
+      pincel.fillStyle = paleta.value; // Pega o valor atual da pelata e aplica ao pincel
       pincel.beginPath();
       pincel.arc(x, y, 10, 0, 2 * 3.14);
       pincel.fill();
