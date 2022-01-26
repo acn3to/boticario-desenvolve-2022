@@ -7,16 +7,16 @@
   pincel.fillStyle = "grey";
   pincel.fillRect(0, 0, 600, 400);
 
+  let raio = 10;
+
   function desenhaCirculo(evento) {
     let x = evento.pageX - tela.offsetLeft;
     let y = evento.pageY - tela.offsetTop;
 
-    let raio = 10;
-
     console.log(x + "," + y);
 
     if (evento.shiftKey) {
-      raio = raio + 20;
+      raio = raio + 10;
     }
 
     pincel.fillStyle = "blue";
