@@ -3,8 +3,8 @@ let xBall = 100; // Eixo inicial X
 let yBall = 200; // Eixo inicial Y
 let diameter = 20; // Diametro da bola
 let radius = diameter / 2; // Raio do círculo
-let speedXBall = 5; // Velocidade no eixo X
-let speedYBall = 5; // Velocidade no eixo Y
+let xSpeedBall = 5; // Velocidade no eixo X
+let ySpeedBall = 5; // Velocidade no eixo Y
 
 //Variáveis da raquete
 let xRaket = 5; // Eixo inicial X
@@ -17,7 +17,7 @@ function setup() {
   createCanvas(600, 400);
 }
 
-// Função predefinida pelo P5 para desenhar no canvas
+// Função predefinida pelo P5 para desenhar no canvas (aqui é onde o jogo ocorre)
 function draw() {
   background(0);
   showBall();
@@ -25,6 +25,7 @@ function draw() {
   verifyCollisionBorder();
   showRaket();
   moveRaket();
+  verifyCollisionRaket();
 }
 
 // Desenha a bola
@@ -39,8 +40,8 @@ function showRaket() {
 
 // Movimenta a bola nos eixos X e Y
 function moveBall() {
-  xBall += speedXBall;
-  yBall += speedYBall;
+  xBall += xSpeedBall;
+  yBall += ySpeedBall;
 }
 
 // Movimenta raquete no eixo Y
@@ -53,12 +54,23 @@ function moveRaket() {
   }
 }
 
-// Aplica a lógica para verificar a colisão com as bordas
+// Lógica para verificar a colisão com as bordas
 function verifyCollisionBorder() {
   if (xBall + radius > width || xBall - radius < 0) {
-    speedXBall *= -1;
+    xSpeedBall *= -1;
   }
   if (yBall + radius > height || yBall - radius < 0) {
-    speedYBall *= -1;
+    ySpeedBall *= -1;
+  }
+}
+
+// Lógica para verificar a colisão com a raquete
+function verifyCollisionRaket() {
+  if (
+    xBall - radius < xRaket + widthRaket &&
+    yBall - radius < yRaket + heightRaket &&
+    yBall + radius > yRaket
+  ) {
+    xSpeedBall *= -1;
   }
 }
