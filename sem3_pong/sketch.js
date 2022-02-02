@@ -12,6 +12,8 @@ let yRaket = 150; // Eixo inicial Y
 let widthRaket = 10; // Comprimento da raquete
 let heightRaket = 90; // Altura da raquete
 
+let hit = false;
+
 // Função predefinida pelo P5 para criação do canvas
 function setup() {
   createCanvas(600, 400);
@@ -25,7 +27,8 @@ function draw() {
   verifyCollisionBorder();
   showRaket();
   moveRaket();
-  verifyCollisionRaket();
+  //verifyCollisionRaket();
+  verifyCollisionRaketLib();
 }
 
 // Desenha a bola
@@ -71,6 +74,22 @@ function verifyCollisionRaket() {
     yBall - radius < yRaket + heightRaket &&
     yBall + radius > yRaket
   ) {
+    xSpeedBall *= -1;
+  }
+}
+
+// Lógica para verificar a colisão com a raquete (Biblioteca externa)
+function verifyCollisionRaketLib() {
+  hit = collideRectCircle(
+    xRaket,
+    yRaket,
+    widthRaket,
+    heightRaket,
+    xBall,
+    yBall,
+    radius
+  );
+  if (hit) {
     xSpeedBall *= -1;
   }
 }
