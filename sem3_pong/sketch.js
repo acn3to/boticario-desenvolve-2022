@@ -24,6 +24,7 @@ function draw() {
   moveBall();
   verifyCollisionBorder();
   showRaket();
+  moveRaket();
 }
 
 // Desenha a bola
@@ -40,6 +41,16 @@ function showRaket() {
 function moveBall() {
   xBall += speedXBall;
   yBall += speedYBall;
+}
+
+// Movimenta raquete no eixo Y
+function moveRaket() {
+  if (keyIsDown(UP_ARROW)) {
+    yRaket -= 10;
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    yRaket += 10;
+  }
 }
 
 // Aplica a lógica para verificar a colisão com as bordas
