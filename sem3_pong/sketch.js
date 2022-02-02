@@ -33,7 +33,7 @@ function showBall() {
 
 // Desenha a raquete
 function showRaket() {
-  Raket(xRaket, yRaket, widthRaket, heightRaket);
+  rect(xRaket, yRaket, widthRaket, heightRaket);
 }
 
 // Movimenta a bola nos eixos X e Y
