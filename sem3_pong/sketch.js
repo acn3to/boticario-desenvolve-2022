@@ -3,14 +3,21 @@ let xBall = 100; // Eixo inicial X
 let yBall = 200; // Eixo inicial Y
 let diameter = 20; // Diametro da bola
 let radius = diameter / 2; // Raio do círculo
+
+// Velocidade da bola
 let xSpeedBall = 5; // Velocidade no eixo X
 let ySpeedBall = 5; // Velocidade no eixo Y
 
-//Variáveis da raquete
+// Variáveis da raquete
 let xRaket = 5; // Eixo inicial X
 let yRaket = 150; // Eixo inicial Y
 let widthRaket = 10; // Comprimento da raquete
 let heightRaket = 90; // Altura da raquete
+
+// Variáveis da raquete do oponente
+let xOpponentRaket = 585; // Eixo inicial X
+let yOpponentRaket = 150; // Eixo inicial Y
+let yOpponentSpeed;
 
 let hit = false;
 
@@ -25,10 +32,12 @@ function draw() {
   showBall();
   moveBall();
   verifyCollisionBorder();
-  showRaket();
+  showRaket(xRaket, yRaket);
+  showRaket(xOpponentRaket, yOpponentRaket);
   moveRaket();
   //verifyCollisionRaket();
   verifyCollisionRaketLib();
+  moveOpponentRaket();
 }
 
 // Desenha a bola
@@ -37,8 +46,8 @@ function showBall() {
 }
 
 // Desenha a raquete
-function showRaket() {
-  rect(xRaket, yRaket, widthRaket, heightRaket);
+function showRaket(x, y) {
+  rect(x, y, widthRaket, heightRaket);
 }
 
 // Movimenta a bola nos eixos X e Y
@@ -55,6 +64,11 @@ function moveRaket() {
   if (keyIsDown(DOWN_ARROW)) {
     yRaket += 10;
   }
+}
+
+function moveOpponentRaket() {
+  yOpponentSpeed = yBall - yOpponentRaket - widthRaket / 2 - 30;
+  yOpponentRaket += yOpponentSpeed;
 }
 
 // Lógica para verificar a colisão com as bordas
