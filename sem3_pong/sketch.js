@@ -1,9 +1,16 @@
+// Variáveis da bola
 let xBall = 100; // Eixo inicial X
 let yBall = 200; // Eixo inicial Y
 let diameter = 20; // Diametro da bola
 let radius = diameter / 2; // Raio do círculo
 let speedXBall = 5; // Velocidade no eixo X
 let speedYBall = 5; // Velocidade no eixo Y
+
+//Variáveis da raquete
+let xRaket = 5; // Eixo inicial X
+let yRaket = 150; // Eixo inicial Y
+let widthRaket = 10; // Comprimento da raquete
+let heightRaket = 90; // Altura da raquete
 
 // Função predefinida pelo P5 para criação do canvas
 function setup() {
@@ -16,11 +23,17 @@ function draw() {
   showBall();
   moveBall();
   verifyCollisionBorder();
+  showRaket();
 }
 
 // Desenha a bola
 function showBall() {
   circle(xBall, yBall, diameter);
+}
+
+// Desenha a raquete
+function showRaket() {
+  Raket(xRaket, yRaket, widthRaket, heightRaket);
 }
 
 // Movimenta a bola nos eixos X e Y
