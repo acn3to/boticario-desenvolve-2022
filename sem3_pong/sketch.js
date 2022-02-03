@@ -109,9 +109,17 @@ function verifyCollisionRaketLib(x, y) {
 
 // Desenha o placar do jogo
 function includeScore() {
+  stroke(255);
+  textAlign(CENTER);
+  textSize(16);
+  fill(color(255, 140, 0));
+  rect(150, 10, 40, 20);
   fill(255);
-  text(myPoints, 278, 26);
-  text(opponentPoints, 321, 26);
+  text(myPoints, 170, 26);
+  fill(color(255, 140, 0));
+  rect(450, 10, 40, 20);
+  fill(255);
+  text(opponentPoints, 470, 26);
 }
 
 // Marcar ponto
