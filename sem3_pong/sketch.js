@@ -36,8 +36,9 @@ function draw() {
   showRaket(xOpponentRaket, yOpponentRaket);
   moveRaket();
   //verifyCollisionRaket();
-  verifyCollisionRaketLib();
+  verifyCollisionRaketLib(xRaket, yRaket);
   moveOpponentRaket();
+  verifyCollisionRaketLib(xOpponentRaket, yOpponentRaket);
 }
 
 // Desenha a bola
@@ -93,16 +94,8 @@ function verifyCollisionRaket() {
 }
 
 // Lógica para verificar a colisão com a raquete (Biblioteca externa)
-function verifyCollisionRaketLib() {
-  hit = collideRectCircle(
-    xRaket,
-    yRaket,
-    widthRaket,
-    heightRaket,
-    xBall,
-    yBall,
-    radius
-  );
+function verifyCollisionRaketLib(x, y) {
+  hit = collideRectCircle(x, y, widthRaket, heightRaket, xBall, yBall, radius);
   if (hit) {
     xSpeedBall *= -1;
   }
