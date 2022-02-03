@@ -25,9 +25,22 @@ let hit = false;
 let myPoints = 0;
 let opponentPoints = 0;
 
+// Variáveis de som do jogo
+let hitRaket;
+let pointSound;
+let soundTrack;
+
+// Carrega os sons do jogo
+function preload() {
+  soundTrack = loadSound("soundtrack.mp3");
+  pointSound = loadSound("scorepoint.mp3");
+  hitRaket = loadSound("hitraket.mp3");
+}
+
 // Função predefinida pelo P5 para criação do canvas
 function setup() {
   createCanvas(600, 400);
+  soundTrack.loop();
 }
 
 // Função predefinida pelo P5 para desenhar no canvas (aqui é onde o jogo ocorre)
@@ -72,7 +85,7 @@ function moveRaket() {
     yRaket += 10;
   }
 }
-
+// Movimenta a raquete do oponente
 function moveOpponentRaket() {
   yOpponentSpeed = yBall - yOpponentRaket - widthRaket / 2 - 30;
   yOpponentRaket += yOpponentSpeed;
@@ -104,6 +117,7 @@ function verifyCollisionRaketLib(x, y) {
   hit = collideRectCircle(x, y, widthRaket, heightRaket, xBall, yBall, radius);
   if (hit) {
     xSpeedBall *= -1;
+    hitRaket.play();
   }
 }
 
@@ -126,8 +140,10 @@ function includeScore() {
 function scorePoint() {
   if (xBall > 590) {
     myPoints += 1;
+    pointSound.play();
   }
   if (xBall < 10) {
     opponentPoints += 1;
+    pointSound.play();
   }
 }
