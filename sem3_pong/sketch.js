@@ -4,7 +4,7 @@ let yBall = 200; // Eixo inicial Y
 let diameter = 20; // Diametro da bola
 let radius = diameter / 2; // Raio do círculo
 
-// Velocidade da bola
+// Variáveis de velocidade da bola
 let xSpeedBall = 5; // Velocidade no eixo X
 let ySpeedBall = 5; // Velocidade no eixo Y
 
@@ -20,6 +20,10 @@ let yOpponentRaket = 150; // Eixo inicial Y
 let yOpponentSpeed;
 
 let hit = false;
+
+// Placar do jogo
+let myPoints = 0;
+let opponentPoints = 0;
 
 // Função predefinida pelo P5 para criação do canvas
 function setup() {
@@ -39,6 +43,8 @@ function draw() {
   verifyCollisionRaketLib(xRaket, yRaket);
   moveOpponentRaket();
   verifyCollisionRaketLib(xOpponentRaket, yOpponentRaket);
+  includeScore();
+  scorePoint();
 }
 
 // Desenha a bola
@@ -98,5 +104,22 @@ function verifyCollisionRaketLib(x, y) {
   hit = collideRectCircle(x, y, widthRaket, heightRaket, xBall, yBall, radius);
   if (hit) {
     xSpeedBall *= -1;
+  }
+}
+
+// Desenha o placar do jogo
+function includeScore() {
+  fill(255);
+  text(myPoints, 278, 26);
+  text(opponentPoints, 321, 26);
+}
+
+// Marcar ponto
+function scorePoint() {
+  if (xBall > 590) {
+    myPoints += 1;
+  }
+  if (xBall < 10) {
+    opponentPoints += 1;
   }
 }
