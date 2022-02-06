@@ -10,4 +10,5 @@ function draw() {
   showCar();
   moveCar();
   moveActor();
+  returnInitialPositionCar();
 }

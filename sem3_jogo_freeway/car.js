@@ -28,3 +28,16 @@ function moveCar() {
   xCar2 -= carSpeed2;
   xCar3 -= carSpeed3;
 }
+
+// Retorna o carro para posição inicial
+function returnInitialPositionCar() {
+  if (xCar < -50) {
+    xCar = 600;
+  }
+  if (xCar2 < -50) {
+    xCar2 = 600;
+  }
+  if (xCar3 < -50) {
+    xCar3 = 600;
+  }
+}
