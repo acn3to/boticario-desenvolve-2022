@@ -12,4 +12,6 @@ function draw() {
   moveActor();
   returnInitialPositionCar();
   verifyCollision();
+  showScore();
+  score();
 }

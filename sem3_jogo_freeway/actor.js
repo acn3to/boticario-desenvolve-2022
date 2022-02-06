@@ -1,10 +1,11 @@
 // Código do ator
 
 let hit = false;
+let myPoints = 0;
 
 // Variávies do ator
 let yActor = 366;
-let xActor = 100;
+let xActor = 85;
 
 // Exibe o ator com seus devidos parâmetros
 function showActor() {
@@ -27,8 +28,8 @@ function moveActor() {
   }
 }
 
+// Verifica colisão
 function verifyCollision() {
-  //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
   for (let i = 0; i < carImages.length; i++) {
     hit = collideRectCircle(
       xCars[i],
@@ -40,11 +41,28 @@ function verifyCollision() {
       15
     );
     if (hit) {
-      collided();
+      returnInitialPositionActor();
     }
   }
 }
 
-function collided() {
+// Retorna o ator para posição inicial
+function returnInitialPositionActor() {
   yActor = 366;
+}
+
+// Exibe pontuação
+function showScore() {
+  fill(255, 240, 0);
+  textAlign(CENTER);
+  textSize(25);
+  text(myPoints, width / 5, 27);
+}
+
+// Marca ponto
+function score() {
+  if (yActor < 15) {
+    myPoints += 1;
+    returnInitialPositionActor();
+  }
 }
