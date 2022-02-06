@@ -42,6 +42,7 @@ function verifyCollision() {
     );
     if (hit) {
       returnInitialPositionActor();
+      soundHit.play();
       if (pointsOverZero()) {
         myPoints -= 1;
       }
@@ -66,6 +67,7 @@ function showScore() {
 function score() {
   if (yActor < 15) {
     myPoints += 1;
+    soundPoints.play();
     returnInitialPositionActor();
   }
 }

@@ -1,4 +1,4 @@
-// Imagens do jogo
+// Imagens e sons do jogo
 
 // Variáveis das imagens
 let roadImage;
@@ -6,6 +6,10 @@ let actorImage;
 let carImage;
 let carImage2;
 let carImage3;
+
+let soundTrack;
+let soundHit;
+let soundPoints;
 
 // Carregando as imagens no projeto
 function preload() {
@@ -15,4 +19,8 @@ function preload() {
   carImage2 = loadImage("./images/car-2.png");
   carImage3 = loadImage("./images/car-3.png");
   carImages = [carImage, carImage2, carImage3, carImage, carImage2, carImage3];
+
+  soundTrack = loadSound("./sounds/track.mp3");
+  soundHit = loadSound("./sounds/hit.mp3");
+  soundPoints = loadSound("./sounds/points.wav");
 }
