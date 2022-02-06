@@ -1,19 +1,13 @@
-let roadImage;
-let actorImage;
-let carImage;
-
-function preload() {
-  roadImage = loadImage("./images/road.png");
-  actorImage = loadImage("./images/actor-1.png");
-  carImage = loadImage("./images/car-1.png");
-}
-
+// Função predefinida pelo P5 para criação do canvas
 function setup() {
   createCanvas(500, 400);
 }
 
+// Função predefinida pelo P5 para desenhar no canvas (aqui é onde o jogo ocorre)
 function draw() {
   background(roadImage);
-  image(actorImage, 100, 366, 30, 30);
-  image(carImage, 400, 40, 50, 40);
+  showActor();
+  showCar();
+  moveCar();
+  moveActor();
 }
