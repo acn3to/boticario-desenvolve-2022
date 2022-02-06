@@ -1,32 +1,32 @@
 // Código do carro
 
-let yCars = [40, 96, 150];
-let carSpeeds = [2, 2.2, 3];
 let xCars = [600, 600, 600];
+let yCars = [40, 96, 150];
+let carSpeeds = [2, 2.5, 3];
 
 // Exibe o carro com seus devidos parâmetros
 function showCar() {
-  image(carImage, xCars[0], yCars[0], 50, 40);
-  image(carImage2, xCars[1], yCars[1], 50, 40);
-  image(carImage3, xCars[2], yCars[2], 50, 40);
+  for (let i = 0; i < carImages.length; i++) {
+    image(carImages[i], xCars[i], yCars[i], 50, 40);
+  }
 }
 
 // Movimenta o carro
 function moveCar() {
-  xCars[0] -= carSpeeds[0];
-  xCars[1] -= carSpeeds[1];
-  xCars[2] -= carSpeeds[2];
+  for (let i = 0; i < carImages.length; i++) {
+    xCars[i] -= carSpeeds[i];
+  }
 }
 
 // Retorna o carro para posição inicial
 function returnInitialPositionCar() {
-  if (xCars[0] < -50) {
-    xCars[0] = 600;
+  for (let i = 0; i < carImages.length; i++) {
+    if (usedWholeScreen(xCars[i])) {
+      xCars[i] = 600;
+    }
   }
-  if (xCars[1] < -50) {
-    xCars[1] = 600;
-  }
-  if (xCars[2] < -50) {
-    xCars[2] = 600;
-  }
+}
+
+function usedWholeScreen(xCar) {
+  return xCar < -50;
 }
