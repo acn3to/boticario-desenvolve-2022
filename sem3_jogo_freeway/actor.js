@@ -1,5 +1,7 @@
 // Código do ator
 
+let hit = false;
+
 // Variávies do ator
 let yActor = 366;
 let xActor = 100;
@@ -23,4 +25,26 @@ function moveActor() {
   if (keyIsDown(RIGHT_ARROW)) {
     xActor += 3;
   }
+}
+
+function verifyCollision() {
+  //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
+  for (let i = 0; i < carImages.length; i++) {
+    hit = collideRectCircle(
+      xCars[i],
+      yCars[i],
+      carWidth,
+      carHeight,
+      xActor,
+      yActor,
+      15
+    );
+    if (hit) {
+      collided();
+    }
+  }
+}
+
+function collided() {
+  yActor = 366;
 }
