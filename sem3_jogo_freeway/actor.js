@@ -18,7 +18,7 @@ function moveActor() {
     yActor -= 3;
   }
   if (keyIsDown(DOWN_ARROW)) {
-    yActor += 3;
+    if (doesMove()) yActor += 3;
   }
   if (keyIsDown(LEFT_ARROW)) {
     xActor -= 3;
@@ -42,6 +42,9 @@ function verifyCollision() {
     );
     if (hit) {
       returnInitialPositionActor();
+      if (pointsOverZero()) {
+        myPoints -= 1;
+      }
     }
   }
 }
@@ -65,4 +68,12 @@ function score() {
     myPoints += 1;
     returnInitialPositionActor();
   }
+}
+
+function pointsOverZero() {
+  return myPoints > 0;
+}
+
+function doesMove() {
+  return yActor < 366;
 }
