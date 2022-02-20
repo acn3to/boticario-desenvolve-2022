@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Geral */
 body {
   font-family: "Montserrat", sans-serif;
@@ -55,83 +56,96 @@ footer .copyright {
   width: 100%;
 }
 
-.principal {
+main .principal {
   padding: 3em 0;
   background: #fefefe;
   width: 940px;
   margin: 0 auto;
 }
 
-.principal p {
+main .principal p {
   margin: 0 0 1em;
 }
 
-.principal strong {
+main .principal strong {
   font-weight: bold;
 }
 
-.principal em {
+main .principal em {
   font-style: italic;
 }
 
-.principal .utensilios {
+main .principal .utensilios {
   width: 120px;
   float: left;
   margin: 0 20px 20px 0;
 }
 
-.titulo-principal {
+main .titulo-principal {
   text-align: center;
   font-size: 2em;
   margin: 0 0 1em;
   clear: left;
 }
 
-.beneficios {
+main .beneficios {
   padding: 3em 0;
   background: #888888;
 }
 
-.beneficios .conteudo-beneficios {
+main .beneficios .conteudo-beneficios {
   width: 640px;
   margin: 0 auto;
 }
 
-.beneficios .conteudo-beneficios .lista-beneficios {
+main .beneficios .conteudo-beneficios .lista-beneficios {
   width: 39%;
   display: inline-block;
   vertical-align: top;
 }
 
-.beneficios .conteudo-beneficios .lista-beneficios .itens {
+main .beneficios .conteudo-beneficios .lista-beneficios .itens {
   line-height: 1.5;
 }
 
-.beneficios .conteudo-beneficios .lista-beneficios .itens:first-child {
+main .beneficios .conteudo-beneficios .lista-beneficios .itens:before {
+  content: "🟊";
+}
+
+main .beneficios .conteudo-beneficios .lista-beneficios .itens:first-child {
   font-weight: bold;
 }
 
-.beneficios .conteudo-beneficios .imagem-beneficios {
+main .beneficios .conteudo-beneficios .imagem-beneficios {
   width: 60%;
+  opacity: 1;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  -webkit-box-shadow: 10px 10px 10px #000000;
+          box-shadow: 10px 10px 10px #000000;
 }
 
-.beneficios .video {
+main .beneficios .conteudo-beneficios .imagem-beneficios:hover {
+  opacity: 0.7;
+}
+
+main .beneficios .video {
   width: 560px;
   margin: 2em auto;
 }
 
-.mapa {
+main .mapa {
   padding: 3em 0;
   background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#888888));
   background: linear-gradient(#fefefe, #888888);
 }
 
-.mapa p {
+main .mapa p {
   margin: 0 0 2em;
   text-align: center;
 }
 
-.mapa .mapa-conteudo {
+main .mapa .mapa-conteudo {
   width: 940px;
   margin: 0 auto;
 }
