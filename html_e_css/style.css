@@ -104,7 +104,7 @@ main form {
 }
 
 main form label,
-main form p {
+main form legend {
   display: block;
   font-size: 20px;
   margin: 0 0 10px;
@@ -119,5 +119,23 @@ main form .input-padrao {
 
 main form .checkbox {
   margin: 20px 0;
+}
+
+main form .enviar {
+  width: 40%;
+  padding: 15px 0;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  font: size 18px;
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: 1s background;
+  transition: 1s background;
+  cursor: pointer;
+}
+
+main form .enviar:hover {
+  background: darkorange;
 }
 /*# sourceMappingURL=style.css.map */

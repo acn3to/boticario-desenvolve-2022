@@ -106,7 +106,7 @@ main {
     margin: 40px 0;
 
     label,
-    p {
+    legend {
       display: block;
       font-size: 20px;
       margin: 0 0 10px;
@@ -121,6 +121,23 @@ main {
 
     .checkbox {
       margin: 20px 0;
+    }
+
+    .enviar {
+      width: 40%;
+      padding: 15px 0;
+      background: orange;
+      color: white;
+      font-weight: bold;
+      font: size 18px;
+      border: none;
+      border-radius: 5px;
+      transition: 1s background;
+      cursor: pointer;
+    }
+
+    .enviar:hover {
+      background: darkorange;
     }
   }
 }
