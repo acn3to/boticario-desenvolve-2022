@@ -130,12 +130,30 @@ main form .enviar {
   font: size 18px;
   border: none;
   border-radius: 5px;
-  -webkit-transition: 1s background;
-  transition: 1s background;
+  -webkit-transition: 1s all;
+  transition: 1s all;
   cursor: pointer;
 }
 
 main form .enviar:hover {
   background: darkorange;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+main table {
+  margin: 20px 0 40px;
+}
+
+main table thead {
+  background: #555555;
+  color: white;
+  font-weight: bold;
+}
+
+main table td,
+main table th {
+  border: 1px solid #000000;
+  padding: 8px 15px;
 }
 /*# sourceMappingURL=style.css.map */
