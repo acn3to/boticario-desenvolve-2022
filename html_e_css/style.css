@@ -1,26 +1,27 @@
+/* Geral */
 header {
   background: #bbbbbb;
   padding: 20px 0;
 }
 
-.caixa {
+header .caixa {
   position: relative;
   width: 940px;
   margin: 0 auto;
 }
 
-nav {
+header .caixa nav {
   position: absolute;
   top: 110px;
   right: 0;
 }
 
-nav li {
+header .caixa nav li {
   display: inline;
   margin: 0 0 0 15px;
 }
 
-nav a {
+header .caixa nav a {
   text-transform: uppercase;
   color: #000000;
   font-weight: bold;
@@ -28,54 +29,9 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
+header .caixa nav a:hover {
   color: #c78c19;
   text-decoration: underline;
-}
-
-.produtos {
-  width: 940px;
-  margin: 0 auto;
-  padding: 50px 0;
-}
-
-.produtos li {
-  display: inline-block;
-  text-align: center;
-  width: 30%;
-  vertical-align: top;
-  margin: 0 1.5%;
-  padding: 30px 20px;
-  box-sizing: border-box;
-  border: 2px solid #000000;
-  border-radius: 10px;
-}
-
-.produtos li:hover {
-  border-color: #c78c19;
-}
-
-.produtos li:active {
-  border-color: #088c19;
-}
-
-.produtos li:hover h2 {
-  font-size: 34px;
-}
-
-.produtos h2 {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.produto-descricao {
-  font-size: 18px;
-}
-
-.produto-preco {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 10px;
 }
 
 footer {
@@ -84,76 +40,84 @@ footer {
   padding: 40px 0;
 }
 
-.copyright {
+footer .copyright {
   color: #ffffff;
   font-size: 13px;
   margin: 20px 0 0;
 }
 
-/* Página de contato */
-.contato {
+/* Produtos */
+main .produtos {
   width: 940px;
-  margin: 40px auto;
+  margin: 0 auto;
+  padding: 80px 0;
 }
 
-.contato label,
-.input-group legend {
-  display: block;
-  margin: 0 0 5px;
-  font-size: 20px;
-}
-
-.campo-padrao,
-textarea {
-  display: block;
-  margin: 0 0 30px;
-  padding: 10px 20px;
-  width: 50%;
-  border: 1px solid #aaa;
-}
-
-.input-group {
-  margin: 0 0 20px;
-}
-
-.newsletter {
-  margin: 0 0 20px;
-}
-
-.botao {
-  margin: 20px 0 0;
-  width: 30%;
-  padding: 10px 20px;
-  font-size: 24px;
+main .produtos li {
   display: inline-block;
-  background: orange;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: 1s;
+  text-align: center;
+  width: 30%;
+  vertical-align: top;
+  margin: 0 1.5%;
+  padding: 30px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #000000;
+  border-radius: 10px;
 }
 
-.botao:hover {
-  cursor: pointer;
-  transform: scale(1.2);
+main .produtos li:hover {
+  border-color: #c78c19;
 }
 
-.funcionamento {
+main .produtos li:active {
+  border-color: #088c19;
+}
+
+main .produtos li:hover h2 {
+  font-size: 34px;
+}
+
+main .produtos h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+main .produto-descricao {
+  font-size: 18px;
+}
+
+main .produto-preco {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Contato */
+main {
   width: 940px;
-  margin: 0 auto 40px;
+  margin: 0 auto;
 }
 
-table {
-  margin: 10px 0 0;
+main form {
+  margin: 40px 0;
 }
 
-th {
-  background: #777777;
-  color: #ffffff;
+main form label,
+main form p {
+  display: block;
+  font-size: 20px;
+  margin: 0 0 10px;
 }
 
-td,
-th {
-  border: 1px solid #000000;
-  padding: 5px 20px;
+main form .input-padrao {
+  display: block;
+  margin: 0 0 20px;
+  padding: 10px 25px;
+  width: 50%;
 }
+
+main form .checkbox {
+  margin: 20px 0;
+}
+/*# sourceMappingURL=style.css.map */
