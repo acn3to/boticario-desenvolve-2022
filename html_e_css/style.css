@@ -55,6 +55,13 @@ footer .copyright {
   width: 100%;
 }
 
+.principal {
+  padding: 3em 0;
+  background: #fefefe;
+  width: 940px;
+  margin: 0 auto;
+}
+
 .principal p {
   margin: 0 0 1em;
 }
@@ -82,6 +89,7 @@ footer .copyright {
 
 .beneficios {
   padding: 3em 0;
+  background: #888888;
 }
 
 .beneficios .conteudo-beneficios {
@@ -114,11 +122,18 @@ footer .copyright {
 
 .mapa {
   padding: 3em 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#888888));
+  background: linear-gradient(#fefefe, #888888);
 }
 
 .mapa p {
   margin: 0 0 2em;
   text-align: center;
+}
+
+.mapa .mapa-conteudo {
+  width: 940px;
+  margin: 0 auto;
 }
 
 /* Produtos */
@@ -169,11 +184,6 @@ main .produto-preco {
 }
 
 /* Contato */
-main {
-  width: 940px;
-  margin: 0 auto;
-}
-
 main form {
   margin: 40px 0;
 }

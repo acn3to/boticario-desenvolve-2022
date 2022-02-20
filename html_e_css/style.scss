@@ -57,6 +57,11 @@ footer {
 }
 
 .principal {
+  padding: 3em 0;
+  background: #fefefe;
+  width: 940px;
+  margin: 0 auto;
+
   p {
     margin: 0 0 1em;
   }
@@ -85,6 +90,7 @@ footer {
 
 .beneficios {
   padding: 3em 0;
+  background: #888888;
 
   .conteudo-beneficios {
     width: 640px;
@@ -117,10 +123,16 @@ footer {
 
 .mapa {
   padding: 3em 0;
+  background: linear-gradient(#fefefe, #888888);
 
   p {
     margin: 0 0 2em;
     text-align: center;
+  }
+
+  .mapa-conteudo {
+    width: 940px;
+    margin: 0 auto;
   }
 }
 
@@ -176,9 +188,6 @@ main {
 /* Contato */
 
 main {
-  width: 940px;
-  margin: 0 auto;
-
   form {
     margin: 40px 0;
 
