@@ -56,67 +56,67 @@ footer .copyright {
   width: 100%;
 }
 
-main .principal {
+.principal {
   padding: 3em 0;
   background: #fefefe;
   width: 940px;
   margin: 0 auto;
 }
 
-main .principal p {
+.principal p {
   margin: 0 0 1em;
 }
 
-main .principal strong {
+.principal strong {
   font-weight: bold;
 }
 
-main .principal em {
+.principal em {
   font-style: italic;
 }
 
-main .principal .utensilios {
+.principal .utensilios {
   width: 120px;
   float: left;
   margin: 0 20px 20px 0;
 }
 
-main .titulo-principal {
+.titulo-principal {
   text-align: center;
   font-size: 2em;
   margin: 0 0 1em;
   clear: left;
 }
 
-main .beneficios {
+.beneficios {
   padding: 3em 0;
   background: #888888;
 }
 
-main .beneficios .conteudo-beneficios {
+.beneficios .conteudo-beneficios {
   width: 640px;
   margin: 0 auto;
 }
 
-main .beneficios .conteudo-beneficios .lista-beneficios {
+.beneficios .conteudo-beneficios .lista-beneficios {
   width: 39%;
   display: inline-block;
   vertical-align: top;
 }
 
-main .beneficios .conteudo-beneficios .lista-beneficios .itens {
+.beneficios .conteudo-beneficios .lista-beneficios .itens {
   line-height: 1.5;
 }
 
-main .beneficios .conteudo-beneficios .lista-beneficios .itens:before {
+.beneficios .conteudo-beneficios .lista-beneficios .itens:before {
   content: "🟊";
 }
 
-main .beneficios .conteudo-beneficios .lista-beneficios .itens:first-child {
+.beneficios .conteudo-beneficios .lista-beneficios .itens:first-child {
   font-weight: bold;
 }
 
-main .beneficios .conteudo-beneficios .imagem-beneficios {
+.beneficios .conteudo-beneficios .imagem-beneficios {
   width: 60%;
   opacity: 1;
   -webkit-transition: 400ms;
@@ -125,27 +125,27 @@ main .beneficios .conteudo-beneficios .imagem-beneficios {
           box-shadow: 10px 10px 10px #000000;
 }
 
-main .beneficios .conteudo-beneficios .imagem-beneficios:hover {
+.beneficios .conteudo-beneficios .imagem-beneficios:hover {
   opacity: 0.7;
 }
 
-main .beneficios .video {
+.beneficios .video {
   width: 560px;
   margin: 2em auto;
 }
 
-main .mapa {
+.mapa {
   padding: 3em 0;
   background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#888888));
   background: linear-gradient(#fefefe, #888888);
 }
 
-main .mapa p {
+.mapa p {
   margin: 0 0 2em;
   text-align: center;
 }
 
-main .mapa .mapa-conteudo {
+.mapa .mapa-conteudo {
   width: 940px;
   margin: 0 auto;
 }
@@ -254,5 +254,33 @@ main table td,
 main table th {
   border: 1px solid #000000;
   padding: 8px 15px;
+}
+
+@media screen and (max-width: 480px) {
+  header .caixa {
+    width: auto;
+  }
+  header .caixa nav {
+    position: static;
+  }
+  .principal {
+    width: auto;
+  }
+  .beneficios .conteudo-beneficios {
+    width: auto;
+  }
+  .beneficios .conteudo-beneficios .lista-beneficios,
+  .beneficios .conteudo-beneficios .imagem-beneficios {
+    width: 100%;
+  }
+  .beneficios .video {
+    width: auto;
+  }
+  .mapa .mapa-conteudo {
+    width: auto;
+  }
+  h1 {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
