@@ -44,7 +44,7 @@
 }
 
 .institucional__contato-email {
-  color: var(--font-link);
+  color: var(--fonte-link);
   text-decoration: underline;
   display: block;
 }
