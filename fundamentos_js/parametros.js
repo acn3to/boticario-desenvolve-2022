@@ -12,6 +12,14 @@ function multiplication(number1 = 1, number2 = 1) {
   return number1 * number2;
 }
 
+function sayHi() {
+  return "Hi guys!";
+}
+
+function sayHiToSomeone(guyName) {
+  console.log(`${sayHi()} My name is ${guyName}.`);
+}
+
 console.log(sum(2, 2));
 
 console.log(nameAge("Arnaldo", 28));
@@ -19,3 +27,5 @@ console.log(nameAge("Arnaldo", 28));
 console.log(multiplication(sum(2, 2), sum(4, 5)));
 
 console.log(multiplication(sum(4, 5)));
+
+sayHiToSomeone("Neto");
