@@ -4,4 +4,8 @@
 
 Aulas ministradas pela plataforma:
 
+<div align="center">
+  
 ![Logo](https://hipsters.tech/wp-content/uploads/2017/08/alurja-v2.png)
+  
+</div>
