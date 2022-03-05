@@ -10,6 +10,6 @@ const client = {
 console.log(
   `The client name is ${client.name}
 His age is ${client.age}
-The 3 first numbers of CPF is ${client.cpf.substring(0, 3)}
+The 3 first numbers of his CPF is ${client.cpf.substring(0, 3)}
 His email is ${client.email}`
 );
