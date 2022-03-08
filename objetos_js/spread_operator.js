@@ -47,4 +47,19 @@ const clients = [
 
 const dependentsList = [...clients[0].dependents, ...clients[1].dependents];
 
-console.table(dependentsList); // Exibe as informações em formato de tabela
+//console.table(dependentsList); // Exibe as informações em formato de tabela
+
+// Outro exemplo de uso do Spred operator
+
+const warriorInfo = {
+  name: "Aragorn",
+  class: "Warrior",
+};
+
+const warriorEquipment = {
+  sword: "Anduril",
+  hood: "Elven cape +2",
+};
+
+const warrior = { ...warriorInfo, ...warriorEquipment };
+console.table(warrior);
