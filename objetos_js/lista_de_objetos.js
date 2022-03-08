@@ -1,3 +1,5 @@
+// Criando listas de objetos e acesando seus valore
+
 const client = {
   name: "Arnaldo Costa Neto",
   age: 28,
