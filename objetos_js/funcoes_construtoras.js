@@ -1,4 +1,4 @@
-// Funções construtoras - Herança 
+// Funções construtoras - Herança
 
 function Client(name, cpf, email, balance) {
   this.name = name;
@@ -18,3 +18,19 @@ const arnaldo = new Client(
 );
 
 console.log(arnaldo);
+
+// Método call()
+function SavingAccountClient(name, cpf, email, balance, SavingBalance) {
+  Client.call(this, name, cpf, email, balance);
+  this.SavingBalance = SavingBalance;
+}
+
+const paula = new SavingAccountClient(
+  "Paula",
+  "99999999999",
+  "ana.paula@gmail.com",
+  1000,
+  5000
+);
+
+console.log(paula);
