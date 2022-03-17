@@ -4,7 +4,9 @@ const connection = require("../infra/connection");
 class Character {
   add(character, res) {
     const charCreated = moment().format("YYYY-MM-DD HH:mm:ss");
-    const date = moment(character.date).format("YYYY-MM-DD HH:mm:ss");
+    const date = moment(character.date, "DD/MM/YYYY").format(
+      "YYYY-MM-DD HH:mm:ss"
+    );
 
     const dateIsValid = moment(date).isSameOrAfter(charCreated);
     const nameIsValid = character.name.length >= 3;
@@ -36,7 +38,7 @@ class Character {
         if (err) {
           res.status(400).json(err);
         } else {
-          res.status(201).json(result);
+          res.status(201).json({ character });
         }
       });
     }
@@ -63,6 +65,36 @@ class Character {
         res.status(400).json(err);
       } else {
         res.status(200).json(character);
+      }
+    });
+  }
+
+  update(id, values, res) {
+    if (values.date) {
+      values.date = moment(values.date, "DD/MM/YYYY").format(
+        "YYYY-MM-DD HH:mm:ss"
+      );
+    }
+
+    const sql = `UPDATE characters SET ? WHERE id=?`;
+
+    connection.query(sql, [values, id], (err, result) => {
+      if (err) {
+        res.status(400).json(err);
+      } else {
+        res.status(200).json({ ...values, id });
+      }
+    });
+  }
+
+  del(id, res) {
+    const sql = "DELETE FROM characters WHERE id=?";
+
+    connection.query(sql, id, (err, result) => {
+      if (err) {
+        res.status(400).json(err);
+      } else {
+        res.status(200).json({ id });
       }
     });
   }

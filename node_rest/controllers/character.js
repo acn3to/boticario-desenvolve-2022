@@ -15,4 +15,17 @@ module.exports = (app) => {
     const character = req.body;
     Character.add(character, res);
   });
+
+  app.patch("/character/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const values = req.body;
+
+    Character.update(id, values, res);
+  });
+
+  app.delete("/character/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);
+
+    Character.del(id, res);
+  });
 };
