@@ -7,7 +7,6 @@ module.exports = (app) => {
 
   app.post("/character", (req, res) => {
     const character = req.body;
-    Character.add(character);
-    res.send("POST Character");
+    Character.add(character, res);
   });
 };
