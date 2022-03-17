@@ -41,6 +41,31 @@ class Character {
       });
     }
   }
+
+  list(res) {
+    const sql = "SELECT * FROM characters";
+
+    connection.query(sql, (err, result) => {
+      if (err) {
+        res.status(400).json(err);
+      } else {
+        res.status(200).json(result);
+      }
+    });
+  }
+
+  idSearch(id, res) {
+    const sql = `SELECT * FROM characters WHERE id =${id}`;
+
+    connection.query(sql, (err, result) => {
+      const character = result[0];
+      if (err) {
+        res.status(400).json(err);
+      } else {
+        res.status(200).json(character);
+      }
+    });
+  }
 }
 
 module.exports = new Character();
