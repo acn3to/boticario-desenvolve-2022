@@ -3,6 +3,7 @@ class Tables {
     this.connection = connection;
 
     this.createCharacter();
+    this.createAndroid();
   }
 
   createCharacter() {
@@ -13,7 +14,20 @@ class Tables {
       if (err) {
         console.error(err);
       } else {
-        console.log("Table character created successfully");
+        console.log("Table characters created successfully");
+      }
+    });
+  }
+
+  createAndroid() {
+    const sql =
+      "CREATE TABLE IF NOT EXISTS androids (id int NOT NULL AUTO_INCREMENT, name varchar(50) NOT NULL, gender varchar(10), image varchar(200), PRIMARY KEY (id))";
+
+    this.connection.query(sql, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("Table androids created successfully");
       }
     });
   }
