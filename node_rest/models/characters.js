@@ -1,5 +1,6 @@
 const moment = require("moment");
 const connection = require("../infra/connection");
+const axios = require("axios");
 
 class Character {
   add(character, res) {
@@ -61,9 +62,13 @@ class Character {
 
     connection.query(sql, (err, result) => {
       const character = result[0];
+
+      const cpf = character.name;
       if (err) {
         res.status(400).json(err);
       } else {
+        const { data } = axios.get(`http://localhost:8082/${cpf}`);
+        character.user = data;
         res.status(200).json(character);
       }
     });

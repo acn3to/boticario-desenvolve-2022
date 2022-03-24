@@ -8,7 +8,7 @@ class Tables {
 
   createCharacter() {
     const sql =
-      "CREATE TABLE IF NOT EXISTS characters (id int NOT NULL AUTO_INCREMENT, name varchar(50) NOT NULL, race varchar(20), gender varchar(10), charCreated datetime NOT NULL, date datetime NOT NULL, PRIMARY KEY (id))";
+      "CREATE TABLE IF NOT EXISTS characters (id int NOT NULL AUTO_INCREMENT, name varchar(11) NOT NULL, race varchar(20), gender varchar(10), charCreated datetime NOT NULL, date datetime NOT NULL, PRIMARY KEY (id))";
 
     this.connection.query(sql, (err) => {
       if (err) {
