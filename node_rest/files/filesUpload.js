@@ -1,7 +1,20 @@
 const fs = require("fs");
+const path = require("path");
 
-fs.createReadStream("./assets/goku.png").pipe(
-  fs.createWriteStream("./assets/goku-stream.png").on("finish", () => {
-    console.log("Image was writed");
-  })
-);
+module.exports = (filePath, file, callBackImageCreated) => {
+  const validTypes = ["jpg", "png", "jpge"];
+  const type = path.extname(filePath);
+  const typeIsValid = validTypes.indexOf(type.substring(1)) !== -1;
+
+  if (typeIsValid) {
+    const newPath = `./assets/images/${file}${type}`;
+
+    fs.createReadStream(filePath)
+      .pipe(fs.createWriteStream(newPath))
+      .on("finish", () => callBackImageCreated(false, newPath));
+  } else {
+    const error = "Type is invalid!";
+    console.log("Error! Invalid type");
+    callBackImageCreated(error);
+  }
+};
