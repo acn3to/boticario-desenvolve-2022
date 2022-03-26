@@ -5,8 +5,7 @@ const instance = new Sequelize(
   config.get("mysql.database"),
   config.get("mysql.user"),
   config.get("mysql.password"),
-  config.get("mysql.host"),
-  { host: "127.0.0.1", dialect: "mysql" }
+  { host: config.get("mysql.host"), dialect: "mysql" }
 );
 
 module.exports = instance;
