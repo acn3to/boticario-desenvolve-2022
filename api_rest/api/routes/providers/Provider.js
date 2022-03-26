@@ -23,6 +23,16 @@ class Provider {
     this.updatedAt = result.updated;
     this.version = result.version;
   }
+
+  async load() {
+    const found = await ProviderTable.getById(this.id);
+    this.company = found.company;
+    this.email = found.email;
+    this.category = found.category;
+    this.createdAt = found.createdAt;
+    this.updatedAt = found.updatedAt;
+    this.version = found.version;
+  }
 }
 
 module.exports = Provider;

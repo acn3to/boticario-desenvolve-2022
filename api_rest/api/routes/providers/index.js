@@ -14,4 +14,15 @@ router.post("/", async (req, res) => {
   res.send(JSON.stringify(provider));
 });
 
+router.get("/:idProvider", async (req, res) => {
+  try {
+    const id = req.params.idProvider;
+    const provider = new Provider({ id: id });
+    await provider.load();
+    res.send(JSON.stringify(provider));
+  } catch (error) {
+    res.send(JSON.stringify({ message: error.message }));
+  }
+});
+
 module.exports = router;
