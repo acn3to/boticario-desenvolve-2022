@@ -25,4 +25,17 @@ router.get("/:idProvider", async (req, res) => {
   }
 });
 
+router.put("/:idProvider", async (req, res) => {
+  try {
+    const id = req.params.idProvider;
+    const receivedData = req.body;
+    const data = Object.assign({}, receivedData, { id: id });
+    const provider = new Provider(data);
+    await provider.update();
+    res.end();
+  } catch (error) {
+    res.send(JSON.stringify({ message: error.message }));
+  }
+});
+
 module.exports = router;

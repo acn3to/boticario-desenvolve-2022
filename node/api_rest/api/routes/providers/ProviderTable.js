@@ -20,4 +20,10 @@ module.exports = {
 
     return found;
   },
+
+  update(id, dataForUpdate) {
+    return Model.update(dataForUpdate, {
+      where: { id: id },
+    });
+  },
 };

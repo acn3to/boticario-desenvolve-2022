@@ -33,6 +33,25 @@ class Provider {
     this.updatedAt = found.updatedAt;
     this.version = found.version;
   }
+
+  async update() {
+    await ProviderTable.getById(this.id);
+    const fields = ["company", "email", "category"];
+    const dataForUpdate = {};
+
+    fields.forEach((field) => {
+      const value = this[field];
+      if (typeof value === "string" && value.length > 0) {
+        dataForUpdate[field] = value;
+      }
+    });
+
+    if (Object.keys(dataForUpdate).length === 0) {
+      throw new Error("No data for update");
+    }
+
+    await ProviderTable.update(this.id, dataForUpdate);
+  }
 }
 
 module.exports = Provider;
