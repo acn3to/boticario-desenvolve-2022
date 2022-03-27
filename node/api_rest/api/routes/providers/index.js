@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const ProviderTable = require("./ProviderTable");
 const Provider = require("./Provider");
+const NotFound = require("../../errors/NotFound");
 
 router.get("/", async (req, res) => {
   const results = await ProviderTable.list();
@@ -34,7 +35,7 @@ router.get("/:idProvider", async (req, res) => {
   }
 });
 
-router.put("/:idProvider", async (req, res) => {
+router.put("/:idProvider", async (req, res, next) => {
   try {
     const id = req.params.idProvider;
     const receivedData = req.body;
@@ -44,8 +45,7 @@ router.put("/:idProvider", async (req, res) => {
     res.status(204);
     res.end();
   } catch (error) {
-    res.status(400);
-    res.send(JSON.stringify({ message: error.message }));
+    next(error);
   }
 });
 

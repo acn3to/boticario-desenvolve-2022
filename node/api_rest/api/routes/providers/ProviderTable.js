@@ -1,4 +1,5 @@
 const Model = require("./ProviderTableModel");
+const NotFound = require("../../errors/NotFound");
 
 module.exports = {
   list() {
@@ -15,7 +16,7 @@ module.exports = {
     });
 
     if (!found) {
-      throw new Error("Provider not found");
+      throw new NotFound();
     }
 
     return found;
