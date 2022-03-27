@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
     res.status(201);
     res.send(JSON.stringify(provider));
   } catch (error) {
+    res.status(400);
     res.send(JSON.stringify({ message: error.message }));
   }
 });
@@ -28,6 +29,7 @@ router.get("/:idProvider", async (req, res) => {
     res.status(200);
     res.send(JSON.stringify(provider));
   } catch (error) {
+    res.status(404);
     res.send(JSON.stringify({ message: error.message }));
   }
 });
@@ -42,6 +44,7 @@ router.put("/:idProvider", async (req, res) => {
     res.status(204);
     res.end();
   } catch (error) {
+    res.status(400);
     res.send(JSON.stringify({ message: error.message }));
   }
 });
@@ -55,6 +58,7 @@ router.delete("/:idProvider", async (req, res) => {
     res.status(204);
     res.end();
   } catch (error) {
+    res.status(404);
     res.send(JSON.stringify({ message: error.message }));
   }
 });
