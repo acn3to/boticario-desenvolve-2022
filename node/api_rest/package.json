@@ -14,6 +14,7 @@
     "body-parser": "^1.19.2",
     "config": "^3.3.7",
     "express": "^4.17.3",
+    "jsontoxml": "^1.0.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
   },
