@@ -1,4 +1,4 @@
-const { publisher1, publisher2 } = require("./arrays");
+const { publisher1, publisher2 } = require("./indexArrays");
 
 function joinLists(list1, list2) {
   let finalList = [];
