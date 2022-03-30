@@ -5,6 +5,10 @@ function search(array, from, to, searchValue) {
   const middle = Math.floor((from + to) / 2);
   const actual = array[middle];
 
+  if (from > to) {
+    return -1;
+  }
+
   if (searchValue === actual.price) {
     return middle;
   }
