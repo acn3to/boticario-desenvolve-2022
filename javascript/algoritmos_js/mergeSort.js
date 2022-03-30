@@ -1,10 +1,17 @@
 const booksList = require("./mergeSortArray");
 
-function mergeSort(array) {
+function mergeSort(array, nestingLevel = 0) {
+  console.log("")
+  console.log(`Nesting level: ${nestingLevel}`);
+  console.log(array);
+
   if (array.length > 1) {
     const middle = Math.floor(array.length / 2);
-    const part1 = mergeSort(array.slice(0, middle));
-    const part2 = mergeSort(array.slice(middle, array.length));
+    const part1 = mergeSort(array.slice(0, middle), nestingLevel + 1);
+    const part2 = mergeSort(
+      array.slice(middle, array.length),
+      nestingLevel + 1
+    );
     array = orders(part1, part2);
   }
   return array;
