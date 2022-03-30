@@ -1,7 +1,7 @@
-const booksList = require("./mergeSortArray");
+const booksList = require("./array");
 
 function mergeSort(array, nestingLevel = 0) {
-  console.log("")
+  console.log("");
   console.log(`Nesting level: ${nestingLevel}`);
   console.log(array);
 
