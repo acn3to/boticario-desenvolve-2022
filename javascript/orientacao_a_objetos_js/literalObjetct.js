@@ -2,7 +2,7 @@ const user = {
   name: "John",
   email: "j@j.com",
   bornDate: "2015/01/01",
-  role: "admin",
+  role: "student",
   active: true,
 
   showInfo: function () {
@@ -26,6 +26,22 @@ const user = {
   },
 };
 
+const admin = {
+  name: "Neto",
+  email: "n@n.com",
+  bornDate: "1993/01/01",
+  role: "student",
+  active: true,
+
+  createCourse() {
+    console.log("Course created!");
+  },
+};
+
+Object.setPrototypeOf(admin, user);
+admin.createCourse();
+admin.showInfo();
+
 // user.showInfo();
 
 // const show = function () {
@@ -39,4 +55,4 @@ const user = {
 
 // show.call(user); //Call: É possível atribuir um this diferente do contexto atual ao executar a função.
 
-user.callFunction(user.showMessage); // O método apply() funciona de forma semelhante ao call(), porém recebe a lista de argumentos em um array.
+// user.callFunction(user.showMessage); // O método apply() funciona de forma semelhante ao call(), porém recebe a lista de argumentos em um array.
