@@ -15,7 +15,7 @@ export default class User {
   }
 
   get name() {
-    return `${this.#name} ${this.#lastName}`;
+    return this.#name;
   }
 
   get lastName() {
@@ -65,12 +65,6 @@ export default class User {
   }
 
   showInfo() {
-    return `
-    Name: ${this.name} 
-    Email: ${this.email}
-    Birth Date: ${this.bornDate}o
-    Role: ${this.role}
-    Active: ${this.active}
-    `;
+    return `${this.name}, ${this.email}, ${this.bornDate}, ${this.role}, ${this.active}`;
   }
 }

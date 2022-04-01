@@ -10,8 +10,11 @@ import Admin from "./Admin.js";
 // console.log(newAdmin.name);
 // console.log(newAdmin.showInfo());
 
-const newUser = new User("Neto", "Costa", "n@n.com", "06/05/1984");
-console.log(newUser.name);
-newUser.name = "Uzumaki Boruto Redan";
-console.log(newUser.name);
-console.log(newUser.lastName);
+// const newUser = new User("Neto", "Costa", "n@n.com", "06/05/1984");
+// console.log(newUser.name);
+// newUser.name = "Uzumaki Boruto Redan";
+// console.log(newUser.name);
+// console.log(newUser.lastName);
+
+const newTeacher = new Teacher("Gus Costa", "g@g.com", "06/05/1984");
+console.log(newTeacher.showInfo());
