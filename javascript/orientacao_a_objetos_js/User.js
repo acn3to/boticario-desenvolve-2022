@@ -1,11 +1,13 @@
 export default class User {
   #name;
+  #lastName;
   #email;
   #bornDate;
   #role;
   #active;
-  constructor(name, email, bornDate, role, active = true) {
+  constructor(name, lastName, email, bornDate, role, active = true) {
     this.#name = name;
+    this.#lastName = lastName;
     this.#email = email;
     this.#bornDate = bornDate;
     this.#role = role || "student";
@@ -13,7 +15,11 @@ export default class User {
   }
 
   get name() {
-    return this.#name;
+    return `${this.#name} ${this.#lastName}`;
+  }
+
+  get lastName() {
+    return this.#lastName;
   }
 
   get email() {
@@ -36,7 +42,10 @@ export default class User {
     if (newName === "") {
       throw new Error("Invalid format");
     }
-    this.#name = newName;
+    let [name, ...lastName] = newName.split(" ");
+    lastName = lastName.join(" ");
+    this.#lastName = lastName;
+    this.#name = name;
   }
 
   set email(newEmail) {
